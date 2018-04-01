@@ -1,0 +1,110 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: All things infrastructure for this app
+
+Resources:
+
+  StagingBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: ui-quietly.jakegillespie.me
+      WebsiteConfiguration:
+        IndexDocument: index.html
+
+  StagingBucketPolicy:
+    Type: "AWS::S3::BucketPolicy"
+    Properties:
+      Bucket: !Ref StagingBucket
+      PolicyDocument:
+        Statement:
+        - Action:
+          - "s3:GetObject"
+          Effect: "Allow"
+          Resource: !Join [ "", [ "arn:aws:s3:::", !Ref StagingBucket, "/*" ] ]
+          Principal: "*"
+
+  StagingSite:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Aliases:
+        - ui-quietly.jakegillespie.me
+        DefaultCacheBehavior:
+          ForwardedValues:
+            QueryString: false
+          TargetOriginId: S3-ui-quietly.jakegillespie.me
+          ViewerProtocolPolicy: redirect-to-https
+        DefaultRootObject: index.html
+        Enabled: true
+        HttpVersion: "http2"
+        Origins:
+        - DomainName: ui-quietly.jakegillespie.me.s3.amazonaws.com
+          Id: S3-ui-quietly.jakegillespie.me
+          S3OriginConfig:
+            OriginAccessIdentity: ""
+        PriceClass: PriceClass_100
+        ViewerCertificate:
+          IamCertificateId: ASCAINWHIIADMVA464UJC
+          SslSupportMethod: sni-only
+
+  StagingRoute:
+    Type: "AWS::Route53::RecordSet"
+    Properties:
+      AliasTarget:
+        DNSName: !GetAtt StagingSite.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+      HostedZoneId: Z24837ZZ5BAXFE  # Requi-quietlyres hosted zone as created by dot-infrastructure.
+      Name: ui-quietly.jakegillespie.me.
+      Type: A
+
+  ProdBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: ui.jakegillespie.me
+      WebsiteConfiguration:
+        IndexDocument: index.html
+
+  ProdBucketPolicy:
+    Type: "AWS::S3::BucketPolicy"
+    Properties:
+      Bucket: !Ref ProdBucket
+      PolicyDocument:
+        Statement:
+        - Action:
+          - "s3:GetObject"
+          Effect: "Allow"
+          Resource: !Join [ "", [ "arn:aws:s3:::", !Ref ProdBucket, "/*" ] ]
+          Principal: "*"
+
+  ProdSite:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Aliases:
+        - ui.jakegillespie.me
+        DefaultCacheBehavior:
+          ForwardedValues:
+            QueryString: false
+          TargetOriginId: S3-ui.jakegillespie.me
+          ViewerProtocolPolicy: redirect-to-https
+        DefaultRootObject: index.html
+        Enabled: true
+        HttpVersion: "http2"
+        Origins:
+        - DomainName: ui.jakegillespie.me.s3.amazonaws.com
+          Id: S3-ui.jakegillespie.me
+          S3OriginConfig:
+            OriginAccessIdentity: ""
+        PriceClass: PriceClass_100
+        ViewerCertificate:
+          IamCertificateId: ASCAINWHIIADMVA464UJC
+          SslSupportMethod: sni-only
+
+  ProdRoute:
+    Type: "AWS::Route53::RecordSet"
+    Properties:
+      AliasTarget:
+        DNSName: !GetAtt ProdSite.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+      HostedZoneId: Z24837ZZ5BAXFE  # Requires hosted zone as created by dot-infrastructure.
+      Name: ui.jakegillespie.me.
+      Type: A

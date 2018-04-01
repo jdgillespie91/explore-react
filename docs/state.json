@@ -1,0 +1,33 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "properties": {
+    "ui": {
+      "$id": "/properties/ui",
+      "type": "object",
+      "properties": {
+        "state": {
+          "$id": "/properties/ui/properties/state",
+          "type": "string",
+          "title": "State",
+          "description": "Describes whether the game is active or paused.",
+          "default": "active",
+          "examples": [
+            "active",
+            "paused"
+          ],
+          "enum": [
+            "active",
+            "paused"
+          ]
+        }
+      },
+      "required": [
+        "state"
+      ]
+    }
+  },
+  "required": [
+    "ui"
+  ]
+}

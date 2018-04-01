@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$1" == "staging" ]; then
+  S3_BUCKET="s3://ui-quietly.jakegillespie.me"
+elif [ "$1" == "production" ]; then
+  S3_BUCKET="s3://ui.jakegillespie.me"
+fi
+
+aws --profile jakegillespie.me s3 sync build/ $S3_BUCKET
+
