@@ -3,7 +3,7 @@ explore-react
 
 The front-end app that is `my exploration into React`__.
 
-.. _app: https://ui.jakegillespie.me
+.. _app: http://ui.jakegillespie.me.s3-website.eu-west-2.amazonaws.com/
 
 __ app_
 
