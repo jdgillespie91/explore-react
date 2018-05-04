@@ -25,7 +25,7 @@ const menuContainer = {
 const wideButton = {
   width: '96%',
   marginTop: '1%',
-  marginBottom: '1%',
+  marginBottom: '1%'
 }
 
 const wideButtonFiller = {

@@ -1,15 +1,15 @@
 import React from 'react'
+import styles from './footerStyles'
+import Avatar from '../Avatar'
+import Stats from '../Stats'
+import Inventory from '../Inventory'
 
-const style = {
-  width: '100%',
-  height: '200px',
+const Footer = () => (
+  <div style={styles.footer} >
+    <Avatar />
+    <Stats />
+    <Inventory />
+  </div>
+)
 
-  position: 'fixed',
-  bottom: '0',
-
-  backgroundColor: 'coral'
-}
-
-const Footer = props => <div {...props} style={style} />
-
-export default () => <Footer />
+export default Footer

@@ -15,7 +15,7 @@ const Menu = props => (
       </div>
       <Button style={styles.wideButton} variant='raised'>end game</Button>
       <div style={styles.wideButtonFiller} />
-      <Button style={styles.wideButton} variant='raised' onClick={props.onClick}>return to game</Button>
+      <Button id='returnToGameButton' style={styles.wideButton} variant='raised' onClick={props.onClick}>return to game</Button>
     </div>
   </div>
 )
