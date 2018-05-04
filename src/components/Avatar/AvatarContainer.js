@@ -1,6 +1,11 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import Avatar from './Avatar'
 
-const AvatarContainer = () => <Avatar />
+const mapStateToProps = state => ({
+  focus: state.ui.focus
+})
 
-export default AvatarContainer
+const AvatarContainer = props => <Avatar {...props} />
+
+export default connect(mapStateToProps)(AvatarContainer)

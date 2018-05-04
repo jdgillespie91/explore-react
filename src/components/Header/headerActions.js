@@ -1,5 +1,7 @@
+import constants from '../../constants'
+
 const pause = {
-  type: 'PAUSE'
+  type: constants.PAUSE
 }
 
 export default {

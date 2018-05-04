@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import Nightmare from 'nightmare'
-import resolveHandler from './resolveHandler'
 import rejectHandler from './rejectHandler'
+import resolveHandler from './resolveHandler'
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 2000
 
@@ -47,6 +47,18 @@ describe('The UI', () => {
     nightmare
       .goto(baseUrl)
       .wait('#inventoryComponent')
+      .end()
+      .then(resolveHandler(done))
+      .catch(rejectHandler(done))
+  })
+
+  it('should display the avatar of the focused unit', done => {
+    nightmare
+      .goto(baseUrl)
+      .click('#peonComponent')
+      .wait('#avatarComponent')
+      // Here, want to check for existence of peon avatar which can only be done by looking at the text currently.
+      .wait(() => true)
       .end()
       .then(resolveHandler(done))
       .catch(rejectHandler(done))

@@ -4,7 +4,7 @@ import Header from './Header'
 import actions from './headerActions'
 
 const mapDispatchToProps = dispatch => ({
-  onClick: () => dispatch(actions.pause)
+  pause: () => dispatch(actions.pause)
 })
 
 const HeaderContainer = props => <Header {...props} />

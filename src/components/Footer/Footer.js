@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from './footerStyles'
 import Avatar from '../Avatar'
-import Stats from '../Stats'
 import Inventory from '../Inventory'
+import Stats from '../Stats'
+import styles from './footerStyles'
 
 const Footer = () => (
   <div style={styles.footer} >

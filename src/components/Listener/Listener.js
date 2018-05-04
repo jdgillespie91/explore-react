@@ -1,5 +1,5 @@
-import React from 'react'
 import Chip from 'material-ui/Chip'
+import React from 'react'
 
 const style = {
   width: '100%',

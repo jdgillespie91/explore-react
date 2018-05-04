@@ -20,10 +20,23 @@
             "active",
             "paused"
           ]
+        },
+        "focus": {
+          "$id": "/properties/ui/properties/focus",
+          "type": "string",
+          "title": "Focus",
+          "description": "Describes the current focus.",
+          "default": "empty",
+          "examples": [
+            "empty",
+            "peon",
+            "stronghold"
+          ]
         }
       },
       "required": [
-        "state"
+        "state",
+        "focus"
       ]
     }
   },

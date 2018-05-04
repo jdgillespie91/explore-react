@@ -1,5 +1,5 @@
-import React from 'react'
 import MaterialChip from 'material-ui/Chip'
+import React from 'react'
 
 const style = {
   margin: '5px'

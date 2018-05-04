@@ -4,7 +4,7 @@ import Menu from './Menu'
 import actions from './menuActions'
 
 const mapDispatchToProps = dispatch => ({
-  onClick: () => dispatch(actions.resume)
+  resume: () => dispatch(actions.resume)
 })
 
 const MenuContainer = props => <Menu {...props} />

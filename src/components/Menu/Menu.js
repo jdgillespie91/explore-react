@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styles from './menuStyles'
 import {Button} from 'material-ui'
+import PropTypes from 'prop-types'
+import React from 'react'
+import styles from './menuStyles'
 
 const Menu = props => (
   <div style={styles.menuContainer}>
@@ -15,13 +15,13 @@ const Menu = props => (
       </div>
       <Button style={styles.wideButton} variant='raised'>end game</Button>
       <div style={styles.wideButtonFiller} />
-      <Button id='returnToGameButton' style={styles.wideButton} variant='raised' onClick={props.onClick}>return to game</Button>
+      <Button id='returnToGameButton' style={styles.wideButton} variant='raised' onClick={props.resume}>return to game</Button>
     </div>
   </div>
 )
 
 Menu.propTypes = {
-  onClick: PropTypes.func.isRequired
+  resume: PropTypes.func.isRequired
 }
 
 export default Menu

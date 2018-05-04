@@ -1,9 +1,14 @@
+import constants from '../constants'
+
 const uiReducer = (state, action) => {
   switch (action.type) {
-    case 'PAUSE':
-      return Object.assign({}, state, {state: 'paused'})
-    case 'RESUME':
-      return Object.assign({}, state, {state: 'active'})
+    case constants.PAUSE:
+      return Object.assign({}, state, {state: constants.paused})
+    case constants.RESUME:
+      return Object.assign({}, state, {state: constants.active})
+    case constants.FOCUS:
+      console.log(action)
+      return Object.assign({}, state, {focus: action.unit})
     default:
       return state
   }

@@ -1,5 +1,7 @@
+import constants from '../../constants'
+
 const resume = {
-  type: 'RESUME'
+  type: constants.RESUME
 }
 
 export default {

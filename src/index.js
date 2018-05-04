@@ -1,14 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
 import App from './components/App'
+import constants from './constants'
+import './index.css'
 import rootReducer from './reducers'
 
 const initialState = {
   ui: {
-    state: 'active'
+    state: constants.active,
+    focus: constants.empty
   }
 }
 const store = createStore(rootReducer, initialState)
