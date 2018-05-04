@@ -43,7 +43,7 @@ Resources:
             OriginAccessIdentity: ""
         PriceClass: PriceClass_100
         ViewerCertificate:
-          IamCertificateId: ASCAINWHIIADMVA464UJC
+          IamCertificateId: ASCAJEDFUXQJZYG5UIWS6
           SslSupportMethod: sni-only
 
   StagingRoute:
@@ -96,7 +96,7 @@ Resources:
             OriginAccessIdentity: ""
         PriceClass: PriceClass_100
         ViewerCertificate:
-          IamCertificateId: ASCAINWHIIADMVA464UJC
+          IamCertificateId: ASCAJBFXHXBIYOYQHWDWE
           SslSupportMethod: sni-only
 
   ProdRoute:

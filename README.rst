@@ -49,6 +49,12 @@ Certificates
 
 Certificates are managed via `Let's Encrypt`__. To renew, use `this guide`__ (there might be a better way). Note that certbot_ is the local binary that should be used.
 
+To generate the certificates, run
+
+.. code-block:: bash
+
+    $ certbot certonly --manual --config-dir /tmp/ --work-dir /tmp/ --logs-dir /tmp/
+
 .. _le: https://letsencrypt.org/
 .. _guide: https://www.codeword.xyz/2016/01/06/lets-encrypt-a-static-site-on-amazon-s3/
 .. _certbot: https://certbot.eff.org/
