@@ -3,11 +3,11 @@ import Nightmare from 'nightmare'
 import rejectHandler from './rejectHandler'
 import resolveHandler from './resolveHandler'
 
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 2000
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 3000
 
 let nightmare
 const nightmareOptions = {
-  show: true
+  show: false
 }
 const baseUrl = 'http://localhost:3000'
 
@@ -20,6 +20,15 @@ describe('The UI', () => {
     nightmare
       .goto(baseUrl)
       .wait('#menuButton')
+      .end()
+      .then(resolveHandler(done))
+      .catch(rejectHandler(done))
+  })
+
+  it('should display a clock', done => {
+    nightmare
+      .goto(baseUrl)
+      .wait('#clockComponent')
       .end()
       .then(resolveHandler(done))
       .catch(rejectHandler(done))

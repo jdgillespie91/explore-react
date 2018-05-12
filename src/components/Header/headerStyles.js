@@ -4,8 +4,32 @@ const header = {
   backgroundColor: '#1abc9c',
 
   display: 'flex',
-  justifyContent: 'left',
+  justifyContent: 'space-between',
   alignItems: 'center'
+}
+
+const headerSection = {
+  height: '100%',
+  flex: 1
+}
+
+const headerLeft = {
+  ...headerSection,
+
+  display: 'flex',
+  alignItems: 'center'
+}
+
+const headerCenter = {
+  ...headerSection,
+
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+}
+
+const headerRight = {
+  ...headerSection
 }
 
 const button = {
@@ -14,5 +38,8 @@ const button = {
 
 export default {
   header,
+  headerLeft,
+  headerCenter,
+  headerRight,
   button
 }
