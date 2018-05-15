@@ -5,6 +5,7 @@ import constants from '../../constants'
 import Footer from '../Footer'
 import Header from '../Header'
 import Menu from '../Menu'
+import Time from '../Time'
 import styles from './appStyles'
 
 const units = [
@@ -19,9 +20,12 @@ const App = props => (
     {!props.isActive && <Menu />}
     <div style={props.isActive ? styles.activeApp : styles.pausedApp}>
       <Header />
-      {units.map(unit => <Button id={`${unit}Component`} variant='raised' onClick={props.focus(unit)}>{unit}</Button>)}
+      {units.map(unit =>
+        <Button id={`${unit}Component`} key={`${unit}`} variant='raised' onClick={props.focus(unit)}>{unit}</Button>
+      )}
       <Footer />
     </div>
+    <Time />
   </div>
 )
 
