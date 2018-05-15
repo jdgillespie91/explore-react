@@ -1,26 +1,30 @@
 function Repeater (callback) {
   const interval = 5000
-  let currentTime, remainingTime, startTime, timer
+  let now, nextTick, lastTick, intervalTimer, timeoutTimer
 
   function wrappedCallback () {
-    startTime = new Date()
+    lastTick = new Date()
     callback()
   }
 
+  this.start = function () {
+    lastTick = new Date()
+    intervalTimer = setInterval(wrappedCallback, interval)
+  }
+
   this.resume = function () {
-    setTimeout(() => {
+    timeoutTimer = setTimeout(() => {
       wrappedCallback()
-      timer = setInterval(wrappedCallback, interval)
-    }, remainingTime)
+      intervalTimer = setInterval(wrappedCallback, interval)
+    }, nextTick)
   }
 
   this.pause = function () {
-    currentTime = new Date()
-    remainingTime = interval - (currentTime - startTime)
-    clearTimeout(timer)
+    now = new Date()
+    nextTick = interval - (now - lastTick)
+    clearTimeout(intervalTimer)
+    clearTimeout(timeoutTimer)
   }
-
-  timer = setInterval(wrappedCallback, interval)
 }
 
 export default Repeater

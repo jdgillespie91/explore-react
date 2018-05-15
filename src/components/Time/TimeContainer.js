@@ -18,6 +18,7 @@ const mapDispatchToProps = dispatch => ({
 const TimeContainer = props => {
   if (!time) {
     time = new Repeater(props.tick)
+    time.start()
   } else {
     props.isActive ? time.resume() : time.pause()
   }

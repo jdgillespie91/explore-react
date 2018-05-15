@@ -18,7 +18,13 @@ We instantiate the `Repeater` with
 
     > const repeater = new Repeater(tick)
 
-This will begin the task automatically. Then we may pause and resume the task with
+Start the task with
+
+.. code-block:: javascript
+
+    > repeater.start()
+
+Similarly, pause and resume the task with
 
 .. code-block:: javascript
 
