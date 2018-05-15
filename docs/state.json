@@ -1,20 +1,21 @@
 {
-  "$id": "http://example.com/example.json",
+  "$id": "https://ui.jakegillespie.me/state.json",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "ui": {
       "$id": "/properties/ui",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "state": {
           "$id": "/properties/ui/properties/state",
           "type": "string",
-          "title": "State",
-          "description": "Describes whether the game is active or paused.",
+          "title": "The State Schema ",
+          "description": "Describes whether the game is active or paused",
           "default": "active",
           "examples": [
-            "active",
-            "paused"
+            "active"
           ],
           "enum": [
             "active",
@@ -24,26 +25,24 @@
         "focus": {
           "$id": "/properties/ui/properties/focus",
           "type": "string",
-          "title": "Focus",
-          "description": "Describes the current focus.",
+          "title": "The Focus Schema ",
+          "description": "Describes the current unit under focus",
           "default": "empty",
           "examples": [
-            "empty",
-            "peon",
-            "stronghold"
+            "empty"
           ]
         },
         "time": {
-          "$id": "/properties/ui/properties/state",
-          "type": "number",
-          "title": "Time",
-          "description": "Describes the in-game time.",
+          "$id": "/properties/ui/properties/time",
+          "type": "integer",
+          "title": "The Time Schema ",
+          "description": "Describes the in-game time",
           "default": 0,
           "examples": [
-            0,
-            1,
-            2
-          ]
+            "0"
+          ],
+          "minimum": 0,
+          "maximum": 23
         }
       },
       "required": [
