@@ -1,6 +1,11 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import Clock from './Clock'
 
-const ClockContainer = () => <Clock />
+const mapStateToProps = state => ({
+  time: state.ui.time % 24
+})
 
-export default ClockContainer
+const ClockContainer = props => <Clock {...props} />
+
+export default connect(mapStateToProps)(ClockContainer)

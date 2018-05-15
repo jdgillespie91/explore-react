@@ -10,7 +10,8 @@ import rootReducer from './reducers'
 const initialState = {
   ui: {
     state: constants.active,
-    focus: constants.empty
+    focus: constants.empty,
+    time: 0
   }
 }
 const store = createStore(rootReducer, initialState)

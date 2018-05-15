@@ -32,11 +32,24 @@
             "peon",
             "stronghold"
           ]
+        },
+        "time": {
+          "$id": "/properties/ui/properties/state",
+          "type": "number",
+          "title": "Time",
+          "description": "Describes the in-game time.",
+          "default": 0,
+          "examples": [
+            0,
+            1,
+            2
+          ]
         }
       },
       "required": [
         "state",
-        "focus"
+        "focus",
+        "time"
       ]
     }
   },
