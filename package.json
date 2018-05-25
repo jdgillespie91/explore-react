@@ -19,7 +19,7 @@
     "build": "bin/build",
     "deploy:staging": "bin/deploy staging",
     "deploy:production": "bin/deploy production",
-    "test": "standard && react-scripts test --env=jsdom",
+    "test": "standard && react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
