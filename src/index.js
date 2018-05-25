@@ -11,7 +11,17 @@ const initialState = {
   ui: {
     state: constants.active,
     focus: constants.empty,
-    time: 0
+    time: 0,
+    snakeTime: 0
+  },
+  snake: {
+    direction: constants.east,
+    position: [
+      {x: 3, y: 0},
+      {x: 2, y: 0},
+      {x: 1, y: 0},
+      {x: 0, y: 0}
+    ]
   }
 }
 const store = createStore(

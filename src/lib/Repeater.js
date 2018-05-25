@@ -1,5 +1,4 @@
-function Repeater (callback) {
-  const interval = 5000
+function Repeater (callback, interval = 5000) {
   let now, nextTick, lastTick, intervalTimer, timeoutTimer
 
   function wrappedCallback () {

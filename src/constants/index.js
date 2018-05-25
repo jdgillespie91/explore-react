@@ -7,5 +7,9 @@ export default {
   grunt: 'grunt',
   stronghold: 'stronghold',
   empty: 'empty',
+  north: 'north',
+  south: 'south',
+  east: 'east',
+  west: 'west',
   ...actionTypes
 }

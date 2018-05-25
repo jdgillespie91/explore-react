@@ -2,5 +2,7 @@ export default {
   PAUSE: 'PAUSE',
   RESUME: 'RESUME',
   FOCUS: 'FOCUS',
-  TICK: 'TICK'
+  TICK: 'TICK',
+  SNAKE_TICK: 'SNAKE_TICK',
+  KEYPRESS: 'KEYPRESS'
 }

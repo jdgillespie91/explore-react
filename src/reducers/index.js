@@ -1,4 +1,5 @@
 import uiReducer from './ui'
+import snakeReducer from './snake'
 
 const eventsReducer = (state, action) => {
   console.debug('(events reducer) state:', state)
@@ -21,6 +22,7 @@ export default (state, action) => {
   return Object.assign(
     {},
     {events: eventsReducer(state && state.events, action)},
-    {ui: uiReducer(state.ui, action)}
+    {ui: uiReducer(state.ui, action)},
+    {snake: snakeReducer(state.snake, action)}
   )
 }

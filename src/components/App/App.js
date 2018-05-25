@@ -2,9 +2,12 @@ import {Button} from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import constants from '../../constants'
+import Board from '../Board'
 import Footer from '../Footer'
 import Header from '../Header'
 import Menu from '../Menu'
+import Snake from '../Snake'
+import SnakeTime from '../SnakeTime'
 import Time from '../Time'
 import styles from './appStyles'
 
@@ -23,9 +26,12 @@ const App = props => (
       {units.map(unit =>
         <Button id={`${unit}Component`} key={`${unit}`} variant='raised' onClick={props.focus(unit)}>{unit}</Button>
       )}
+      <Snake />
+      <Board />
       <Footer />
     </div>
     <Time />
+    <SnakeTime />
   </div>
 )
 
