@@ -3,8 +3,6 @@ import Nightmare from 'nightmare'
 import rejectHandler from './rejectHandler'
 import resolveHandler from './resolveHandler'
 
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 3000
-
 let nightmare
 const nightmareOptions = {
   show: false
