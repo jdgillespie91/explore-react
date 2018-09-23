@@ -19,8 +19,8 @@ class TodoForm extends Component {
 
   render () {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input id='todoForm' type='text' value={this.state.value} onChange={this.handleChange} />
+      <form id='todo-form' onSubmit={this.handleSubmit}>
+        <input id='todo-form-input' className='list-form-todo' type='text' value={this.state.value} onChange={this.handleChange} />
       </form>
     )
   }

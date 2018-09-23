@@ -9,9 +9,14 @@ class TodoContainer extends Component {
   }
 
   componentDidUpdate () {
-    const form = document.getElementById('todoForm')
+    const form = document.getElementById('todo-form-input')
     if (form) {
       form.focus()
+    }
+
+    const button = document.getElementById('todo-button')
+    if (button) {
+      button.focus()
     }
   }
 

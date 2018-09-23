@@ -4,28 +4,8 @@ import {randomAlphanumeric} from './randomStrings'
 
 const initialState = {
   todo: [
-    {
-      id: randomAlphanumeric(),
-      title: 'Shopping'
-    },
-    {
-      id: randomAlphanumeric(),
-      title: 'Laundry'
-    },
-    {
-      id: randomAlphanumeric(),
-      title: 'Book tickets'
-    }
   ],
   done: [
-    {
-      id: randomAlphanumeric(),
-      title: 'Call home'
-    },
-    {
-      id: randomAlphanumeric(),
-      title: 'Get coffee'
-    }
   ]
 }
 
