@@ -6,21 +6,21 @@ const app = {
 }
 
 const board = {
-  width: '300px',
-  height: '300px',
+  width: '600px',
+  height: '200px',
   padding: '2px',
   backgroundColor: '#1abc9c',
 
   display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
+  justifyContent: 'flex-start',
+  alignContent: 'flex-start',
   flexWrap: 'wrap'
 }
 
 const inactiveCell = {
-  width: '26px',
-  height: '26px',
-  margin: '2px',
+  width: '8px',
+  height: '8px',
+  margin: '1px',
   backgroundColor: 'white'
 }
 
