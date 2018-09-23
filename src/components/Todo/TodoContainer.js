@@ -13,11 +13,6 @@ class TodoContainer extends Component {
     if (form) {
       form.focus()
     }
-
-    const button = document.getElementById('todo-button')
-    if (button) {
-      button.focus()
-    }
   }
 
   toggle () {
